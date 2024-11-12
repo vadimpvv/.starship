@@ -1,10 +1,14 @@
 format = """\
 [╭╴](fg:arrow)\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$os\
 $username\
 (\
     $hostname $localip\
 )\
-$os\
 $cmd_duration\
 (\
     via \
@@ -17,14 +21,7 @@ $cmd_duration\
 )\
 $time\
 $sudo\
-$memory_usage\
-$git_branch\
-$git_status\
-$git_state\
-(\
-    at \
-    $directory\
-)
+$memory_usage
 [╰─](fg:arrow)$env_var$character\
 """
 # Add the modules you need
@@ -60,14 +57,14 @@ text_light = "#26272A"
 [username]
 style_user = 'bold os'
 style_root = 'bold os_admin'
-format = '[  $user](fg:$style) '
+format = '[$user](fg:$style) '
 disabled = false
 show_always = true
 
 [os]
-format = "on [($name)]($style) "
+format = "[$symbol]($style)"
 style = "bold blue"
-disabled = true
+disabled = false
 
 [os.symbols]
 Alpine = " "
